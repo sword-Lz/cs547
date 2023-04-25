@@ -8,6 +8,8 @@
   <body>
     <div class="theme">
       <h1><a href="/">Causal inference in graph-based recommendation system</a></h1>
+      <hr><br>
+      <p><a href="https://github.com/sword-Lz/cs547" target="_blank">View code on GitHub</a></p>
     </div>
     <div class="container">
       <h2>Working Model of Yelp Recommendation</h2>
@@ -21,7 +23,7 @@
       </form>
       <div class="output-container">
         {% if results %}
-          {{ results }}
+          <pre>{{ results }}</pre>
         {% else %}
           <!-- <p>Enter some Input</p> -->
         {% endif %}

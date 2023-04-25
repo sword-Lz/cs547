@@ -21,6 +21,14 @@ def predict(input):
     ITEM_NUM = data_generator.n_items
     item_batch = list(range(ITEM_NUM))
 
+    seed = 1234
+    torch.manual_seed(seed)
+    # if you are using multi-GPU.
+    np.random.seed(seed)  # Numpy module.
+    random.seed(seed)  # Python random module.
+    torch.manual_seed(seed)
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
     all_emb = model(user_batch, item_batch, [], drop_flag=False, test_flag=True)
     rate_batch = model.rating(all_emb, user_batch, item_batch).detach().cpu()
     item_score = {}

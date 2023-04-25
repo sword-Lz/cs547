@@ -38,7 +38,13 @@ def search():
         if userId < 0 or userId > 31667:
             answer = "Please enter a number between 1 and 31667"
         else:
-            answer = predict(userId)
+            prefix = (
+                "We recommend user "
+                + str(userId)
+                + " to visit following businesses:\n"
+                + "\n"
+            )
+            answer = prefix + str(predict(userId))
     return render_template("index.html", results=answer)
 
 
