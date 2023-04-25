@@ -80,4 +80,9 @@
       flex-wrap: wrap;
     }
   }
+
+  a {
+    color: inherit; /* inherit the parent color */
+    text-decoration: none; /* remove underline */
+  }
   

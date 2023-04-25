@@ -2,16 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Search Engine</title>
+    <title>Causal inference in graph-based recommendation system </title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
     <div class="theme">
-      <h1>Search Engine</h1>
+      <h1><a href="/">Causal inference in graph-based recommendation system</a></h1>
     </div>
     <div class="container">
+      <h2>Working Model of Yelp Recommendation</h2>
       <form action="/search" method="POST">
         <div class="search-container">
+          <br>
+          <label for="userid">Enter UserID:</label>
           <input type="text" name="search" placeholder="Search...">
           <button type="submit">Search</button>
         </div>
@@ -20,14 +23,20 @@
         {% if results %}
           {{ results }}
         {% else %}
-          <p>No results found.</p>
+          <!-- <p>Enter some Input</p> -->
         {% endif %}
       </div>
       <div class="image-container">
         <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Image 1">
       </div>
       <div class="image-container">
-        <img src="{{ url_for('static', filename='image2.png') }}" alt="Image 2">
+        <img src="{{ url_for('static', filename='img2.jpg') }}" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Image 2">
+      </div>
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='img4.jpg') }}" alt="Image 2">
       </div>
     </div>
   </body>
