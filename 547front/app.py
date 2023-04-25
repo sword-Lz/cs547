@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, request
 
 from backend.test_ import predict
 
@@ -23,7 +23,18 @@ def search():
     if search_results == "":
         answer = "Please enter a number"
     else:
-        userId = int(search_results)
+        # check if str can be coverted to int
+        isInt = True
+        userId = 0
+        try:
+            userId = int(search_results)
+        except ValueError:
+            isInt = False
+
+        if isInt == False:
+            answer = "Please enter a number"
+            return render_template("index.html", results=answer)
+
         if userId < 0 or userId > 31667:
             answer = "Please enter a number between 1 and 31667"
         else:
